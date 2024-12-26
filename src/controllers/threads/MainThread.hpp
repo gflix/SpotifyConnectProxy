@@ -2,7 +2,9 @@
 #define CONTROLLERS_THREADS_MAINTHREAD_HPP_
 
 #include <ctime>
+#include <algorithm>
 #include <memory>
+#include <stdexcept>
 #include <controllers/MulticastUdpReceiver.hpp>
 #include <controllers/MulticastUdpTransmitter.hpp>
 #include <models/CommandlineArguments.hpp>
@@ -38,6 +40,42 @@ protected:
         const MdnsMessage& mdnsMessage);
 
     void reloadTimeout(timeval& timeout, bool initial = false);
+
+    template<typename T>
+    MdnsResourceRecords::const_iterator findResourceRecord(const MdnsMessage& message, T pred)
+    {
+        auto it = std::find_if(
+            message.answers.cbegin(),
+            message.answers.cend(),
+            pred);
+
+        if (it != message.answers.cend())
+        {
+            return it;
+        }
+
+        it = std::find_if(
+            message.additionalRecords.cbegin(),
+            message.additionalRecords.cend(),
+            pred);
+
+        if (it != message.additionalRecords.cend())
+        {
+            return it;
+        }
+
+        it = std::find_if(
+            message.authorityRecords.cbegin(),
+            message.authorityRecords.cend(),
+            pred);
+
+        if (it != message.authorityRecords.cend())
+        {
+            return it;
+        }
+
+        throw std::out_of_range("expected resource record not found");
+    }
 };
 
 #endif /* CONTROLLERS_THREADS_MAINTHREAD_HPP_ */
