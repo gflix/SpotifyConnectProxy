@@ -71,7 +71,7 @@ void Log::debug(const std::string& logMessage)
     if (LogLevel::DEBUG <= m_logLevel) {
         std::lock_guard<std::mutex> lock(m_mutex);
         if (m_toTty) {
-            std::cout << "\033[34;2m" << getTimestamp(time(nullptr)) << " [D] " << logMessage << "\033[0m" << std::endl;
+            std::cout << "\033[2m" << getTimestamp(time(nullptr)) << " [D] " << logMessage << "\033[0m" << std::endl;
         } else {
             std::cerr << SD_DEBUG << logMessage << std::endl;
         }

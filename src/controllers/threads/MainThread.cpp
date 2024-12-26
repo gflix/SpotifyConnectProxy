@@ -1,4 +1,3 @@
-#include <algorithm>
 #include <csignal>
 #include <controllers/threads/MainThread.hpp>
 #include <models/MdnsResourceRecord.hpp>
@@ -188,31 +187,18 @@ void MainThread::proxySpotifyConnectInformationIfApplicable(
 
         try
         {
-            auto ptrIt = std::find_if(
-                mdnsMessage.answers.cbegin(),
-                mdnsMessage.answers.cend(),
+            auto ptrIt = findResourceRecord(mdnsMessage,
                 [](const MdnsResourceRecord& item) {
                     return item.type == DnsResourceType::PTR;
                 });
-            auto txtIt = std::find_if(
-                mdnsMessage.additionalRecords.cbegin(),
-                mdnsMessage.additionalRecords.cend(),
+            auto txtIt = findResourceRecord(mdnsMessage,
                 [](const MdnsResourceRecord& item) {
                     return item.type == DnsResourceType::TXT;
                 });
-            auto srvIt = std::find_if(
-                mdnsMessage.additionalRecords.cbegin(),
-                mdnsMessage.additionalRecords.cend(),
+            auto srvIt = findResourceRecord(mdnsMessage,
                 [](const MdnsResourceRecord& item) {
                     return item.type == DnsResourceType::SRV;
                 });
-
-            if (ptrIt == mdnsMessage.additionalRecords.cend() ||
-                txtIt == mdnsMessage.additionalRecords.cend() ||
-                srvIt == mdnsMessage.additionalRecords.cend())
-            {
-                throw std::runtime_error("expected PTR, TXT and/or SRV records are not available");
-            }
 
             auto ptrData = dynamic_cast<ResourceRecordPtrPayload*>(ptrIt->decodedData.get());
             auto txtData = dynamic_cast<ResourceRecordTxtPayload*>(txtIt->decodedData.get());
