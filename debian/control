@@ -1,0 +1,20 @@
+Source: spotify-connect-proxy
+Section: unknown
+Priority: optional
+Maintainer: Felix Mellmann <flix@benfm.de>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.0
+#Homepage: <insert the upstream URL, if relevant>
+Vcs-Browser: https://github.com/gflix/SpotifyConnectProxy
+#Vcs-Git: https://salsa.debian.org/debian/spotify-connect-proxy.git
+Rules-Requires-Root: no
+
+Package: spotify-connect-proxy
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Spotify Connect Proxy
+ This package provides spotify-connect-proxy which transfers the
+ information about Spotify Connect capable devices from one network
+ segment to other segments.
+ This allows to connect to such devices even if they are not within the
+ same network segment.
