@@ -50,7 +50,7 @@ set(
 )
 
 add_library(
-    libspotify-connect-proxy SHARED
+    libspotify-connect-proxy
     ${LIBRARY_SOURCE_FILES}
 )
 

@@ -4,7 +4,8 @@ Priority: optional
 Maintainer: Felix Mellmann <flix@benfm.de>
 Build-Depends: debhelper-compat (= 12),
                cmake,
-               libsystemd-dev
+               libsystemd-dev,
+               pkg-config
 Standards-Version: 4.6.0
 #Homepage: <insert the upstream URL, if relevant>
 Vcs-Browser: https://github.com/gflix/SpotifyConnectProxy
