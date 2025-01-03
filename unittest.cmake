@@ -27,6 +27,8 @@ set(
     unittest/utils/ConversionTest.cpp
     unittest/utils/EnumMapperTest.cpp
     unittest/utils/JoinTest.cpp
+    unittest/utils/SplitTest.cpp
+    unittest/utils/TrimTest.cpp
 )
 
 add_executable(

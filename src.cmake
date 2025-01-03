@@ -47,6 +47,8 @@ set(
     src/utils/Conversion.cpp
     src/utils/Join.cpp
     src/utils/Log.cpp
+    src/utils/Trim.cpp
+    src/utils/Split.cpp
 )
 
 add_library(
