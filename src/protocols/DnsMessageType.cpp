@@ -4,9 +4,9 @@
 namespace Protocol
 {
 
-const static std::map<std::string, ::DnsMessageType> mapping {
-    { "QUERY", ::DnsMessageType::QUERY },
-    { "REPLY", ::DnsMessageType::REPLY },
+const static std::map<::DnsMessageType, std::string> mapping {
+    { ::DnsMessageType::QUERY, "QUERY" },
+    { ::DnsMessageType::REPLY, "REPLY" },
 };
 
 std::string DnsMessageType::toIdentifier(::DnsMessageType item)

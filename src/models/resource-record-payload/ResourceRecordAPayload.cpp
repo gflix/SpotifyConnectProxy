@@ -2,9 +2,8 @@
 #include <models/resource-record-payload/ResourceRecordAPayload.hpp>
 
 ResourceRecordAPayload::ResourceRecordAPayload(
-    DnsResourceType type,
     const std::string& address):
-    GenericResourceRecordPayload(type),
+    GenericResourceRecordPayload(DnsResourceType::A),
     address(address)
 {
 }

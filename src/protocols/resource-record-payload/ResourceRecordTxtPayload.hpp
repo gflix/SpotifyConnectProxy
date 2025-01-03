@@ -13,8 +13,7 @@ public:
     static ::ResourceRecordTxtPayload fromByteArray(
         const ::ByteArray& bytes,
         size_t offset,
-        ssize_t length,
-        DnsResourceType type);
+        ssize_t length);
     static ::ByteArray toByteArray(const ::ResourceRecordTxtPayload& item);
 };
 

@@ -7,7 +7,6 @@
 struct ResourceRecordTxtPayload: public GenericResourceRecordPayload
 {
     explicit ResourceRecordTxtPayload(
-        DnsResourceType type,
         const StringList& lines = StringList());
     virtual ~ResourceRecordTxtPayload();
 

@@ -8,11 +8,9 @@ namespace Protocol
 
 ::ResourceRecordAPayload ResourceRecordAPayload::fromByteArray(
     const ::ByteArray& bytes,
-    size_t offset,
-    DnsResourceType type)
+    size_t offset)
 {
-    ::ResourceRecordAPayload result {
-        type };
+    ::ResourceRecordAPayload result;
 
     if (bytes.size() - offset < 4)
     {

@@ -1,3 +1,9 @@
 /.vscode/settings.json
 /build/
+/debian/.debhelper/
+/debian/debhelper-build-stamp
 /debian/files
+/debian/spotify-connect-proxy/
+/debian/spotify-connect-proxy.postrm.debhelper
+/debian/spotify-connect-proxy.substvars
+/obj-*/

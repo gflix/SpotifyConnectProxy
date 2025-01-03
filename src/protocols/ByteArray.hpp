@@ -9,6 +9,10 @@ namespace Protocol
 class ByteArray
 {
 public:
+    static uint8_t decodeHexDigit(char digit);
+
+    static ::ByteArray fromHex(const std::string& input);
+
     static std::string toHex(
         const ::ByteArray& data,
         const std::string& separator = std::string(),

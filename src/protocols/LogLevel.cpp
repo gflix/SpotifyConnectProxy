@@ -4,12 +4,12 @@
 namespace Protocol
 {
 
-const static std::map<std::string, ::LogLevel> mapping {
-    { "ERROR", ::LogLevel::ERROR },
-    { "WARNING", ::LogLevel::WARNING },
-    { "NOTICE", ::LogLevel::NOTICE },
-    { "INFO", ::LogLevel::INFO },
-    { "DEBUG", ::LogLevel::DEBUG },
+const static std::map<::LogLevel, std::string> mapping {
+    { ::LogLevel::ERROR, "ERROR" },
+    { ::LogLevel::WARNING, "WARNING" },
+    { ::LogLevel::NOTICE, "NOTICE" },
+    { ::LogLevel::INFO, "INFO" },
+    { ::LogLevel::DEBUG, "DEBUG" },
 };
 
 ::LogLevel LogLevel::fromIdentifier(const std::string& identifier)
@@ -22,7 +22,7 @@ const static std::map<std::string, ::LogLevel> mapping {
 
 std::string LogLevel::toIdentifier(::LogLevel logLevel)
 {
-    return ::EnumMapper<::LogLevel>::toIdentifierWithDefault(mapping, logLevel, "DEBUG");
+    return ::EnumMapper<::LogLevel>::toIdentifierWithDefault(mapping, logLevel, "UNKNOWN");
 }
 
 } /* namespace Protocol */

@@ -8,8 +8,7 @@ namespace Protocol
 
 ::ResourceRecordSrvPayload ResourceRecordSrvPayload::fromByteArray(
     const ::ByteArray& bytes,
-    size_t offset,
-    DnsResourceType type)
+    size_t offset)
 {
     if (bytes.size() - offset < 7)
     {
@@ -17,7 +16,6 @@ namespace Protocol
     }
 
     ::ResourceRecordSrvPayload result {
-        type,
         ntohs(Conversion::uint16FromByteArray(bytes.substr(offset, 2))),
         ntohs(Conversion::uint16FromByteArray(bytes.substr(offset + 2, 2))),
         ntohs(Conversion::uint16FromByteArray(bytes.substr(offset + 4, 2))) };

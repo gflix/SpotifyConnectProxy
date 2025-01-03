@@ -7,7 +7,6 @@
 struct ResourceRecordSrvPayload: public GenericResourceRecordPayload
 {
     explicit ResourceRecordSrvPayload(
-        DnsResourceType type,
         unsigned int priority = 0,
         unsigned int weight = 0,
         unsigned int port = 0,
