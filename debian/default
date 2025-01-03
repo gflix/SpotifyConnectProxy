@@ -1,0 +1,12 @@
+#
+# Uncomment to enable the service
+# ENABLED=1
+
+#
+# Set the interface which is used to query for Spotify Connect information packages
+IN_INTERFACE=ens18
+
+#
+# Set the interfaces to which the received Spotify Connect information shall be proxied
+# Use a space separated list if multiple interfaces shall be used
+OUT_INTERFACES=ens19

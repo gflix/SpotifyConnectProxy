@@ -1,0 +1,13 @@
+[Unit]
+Description=Spotify connect proxy
+Requires=network-online.target
+ConditionPathExists=/etc/default/spotify-connect-proxy
+
+[Service]
+Environment=ENABLED=0
+EnvironmentFile=/etc/default/spotify-connect-proxy
+ExecCondition=/usr/bin/sh -c 'test ${ENABLED} -eq 1 -a -n "${IN_INTERFACE}" -a -n "${OUT_INTERFACES}"'
+ExecStart=/usr/bin/spotify-connect-proxy ${IN_INTERFACE} ${OUT_INTERFACES}
+
+[Install]
+WantedBy=multi-user.target
