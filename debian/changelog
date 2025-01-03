@@ -1,3 +1,9 @@
+spotify-connect-proxy (0.1.0) noble; urgency=medium
+
+  * New: Added support for multiple out interfaces within one argument
+
+ -- Felix Mellmann <felix.mellmann@funkwerk.com>  Fri, 03 Jan 2025 16:36:30 +0100
+
 spotify-connect-proxy (0.0.2) noble; urgency=medium
 
   * New: Added README.md with usage information
