@@ -1,3 +1,10 @@
+spotify-connect-proxy (0.0.2) noble; urgency=medium
+
+  * New: Added README.md with usage information
+  * New: Added systemd service and configuration file
+
+ -- Felix Mellmann <felix.mellmann@funkwerk.com>  Fri, 03 Jan 2025 11:57:12 +0100
+
 spotify-connect-proxy (0.0.1) noble; urgency=medium
 
   * Initial Release.
