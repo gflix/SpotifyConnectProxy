@@ -76,6 +76,7 @@ target_compile_options(
 target_link_libraries(
     spotify-connect-proxy
     libspotify-connect-proxy
+    PkgConfig::SYSTEMD
 )
 
 # install binaries to the target
