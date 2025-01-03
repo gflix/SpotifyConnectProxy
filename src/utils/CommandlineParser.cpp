@@ -2,6 +2,7 @@
 #include <stdexcept>
 #include <protocols/LogLevel.hpp>
 #include <utils/CommandlineParser.hpp>
+#include <utils/Split.hpp>
 
 void CommandlineParser::parseArguments(int argc, char const* argv[], CommandlineArguments& arguments)
 {
@@ -35,11 +36,14 @@ void CommandlineParser::parseArguments(int argc, char const* argv[], Commandline
 
     while (optind < argc)
     {
-        std::string interface = argv[optind++];
-        if (interface == arguments.inInterface)
+        auto interfaces = Split::string(argv[optind++], " ", true);
+        for (auto& interface: interfaces)
         {
-            throw std::invalid_argument("OUT interfaces and the IN interface must not be the same");
+            if (interface == arguments.inInterface)
+            {
+                throw std::invalid_argument("OUT interfaces and the IN interface must not be the same");
+            }
+            arguments.outInterfaces.push_back(interface);
         }
-        arguments.outInterfaces.push_back(interface);
     }
 }
