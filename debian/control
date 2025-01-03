@@ -4,6 +4,8 @@ Priority: optional
 Maintainer: Felix Mellmann <flix@benfm.de>
 Build-Depends: debhelper-compat (= 12),
                cmake,
+               gcovr,
+               libgtest-dev (>= 1.11.0),
                libsystemd-dev,
                pkg-config
 Standards-Version: 4.6.0

@@ -6,11 +6,9 @@ namespace Protocol
 
 ::ResourceRecordPtrPayload ResourceRecordPtrPayload::fromByteArray(
     const ::ByteArray& bytes,
-    size_t offset,
-    DnsResourceType type)
+    size_t offset)
 {
-    ::ResourceRecordPtrPayload result {
-        type };
+    ::ResourceRecordPtrPayload result;
     Protocol::StringList::fromLengthValueEncodedByteArray(bytes, offset, result.domainName);
 
     return result;

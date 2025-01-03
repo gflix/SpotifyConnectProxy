@@ -3,12 +3,11 @@
 #include <utils/Join.hpp>
 
 ResourceRecordSrvPayload::ResourceRecordSrvPayload(
-    DnsResourceType type,
     unsigned int priority,
     unsigned int weight,
     unsigned int port,
     const StringList& target):
-    GenericResourceRecordPayload(type),
+    GenericResourceRecordPayload(DnsResourceType::SRV),
     priority(priority),
     weight(weight),
     port(port),

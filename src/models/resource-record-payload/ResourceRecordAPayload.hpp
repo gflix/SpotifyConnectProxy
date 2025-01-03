@@ -6,7 +6,6 @@
 struct ResourceRecordAPayload: public GenericResourceRecordPayload
 {
     explicit ResourceRecordAPayload(
-        DnsResourceType type,
         const std::string& address = std::string());
     virtual ~ResourceRecordAPayload();
 

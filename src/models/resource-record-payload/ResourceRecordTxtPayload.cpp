@@ -3,9 +3,8 @@
 #include <utils/Containers.hpp>
 
 ResourceRecordTxtPayload::ResourceRecordTxtPayload(
-    DnsResourceType type,
     const StringList& lines):
-    GenericResourceRecordPayload(type),
+    GenericResourceRecordPayload(DnsResourceType::TXT),
     lines(lines)
 {
 }

@@ -5,14 +5,14 @@
 namespace Protocol
 {
 
-const static std::map<std::string, ::DnsResourceType> identifierMapping {
-    { "A", ::DnsResourceType::A },
-    { "AAAA", ::DnsResourceType::AAAA },
-    { "ANY", ::DnsResourceType::ANY },
-    { "NSEC", ::DnsResourceType::NSEC },
-    { "PTR", ::DnsResourceType::PTR },
-    { "SRV", ::DnsResourceType::SRV },
-    { "TXT", ::DnsResourceType::TXT },
+const static std::map<::DnsResourceType, std::string> identifierMapping {
+    { ::DnsResourceType::A, "A" },
+    { ::DnsResourceType::AAAA, "AAAA" },
+    { ::DnsResourceType::ANY, "ANY" },
+    { ::DnsResourceType::NSEC, "NSEC" },
+    { ::DnsResourceType::PTR, "PTR" },
+    { ::DnsResourceType::SRV, "SRV" },
+    { ::DnsResourceType::TXT, "TXT" },
 };
 
 const static std::map<unsigned int, ::DnsResourceType> codeMapping {
@@ -35,7 +35,7 @@ std::string DnsResourceType::toIdentifier(::DnsResourceType item)
     auto it = codeMapping.find(value);
     if (it == codeMapping.cend())
     {
-        throw std::invalid_argument("invalid query type \"" + std::to_string(value) + "\"");
+        throw std::out_of_range("invalid query type \"" + std::to_string(value) + "\"");
     }
 
     return it->second;

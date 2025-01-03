@@ -12,8 +12,7 @@ class ResourceRecordSrvPayload
 public:
     static ::ResourceRecordSrvPayload fromByteArray(
         const ::ByteArray& bytes,
-        size_t offset,
-        DnsResourceType type);
+        size_t offset);
     static ::ByteArray toByteArray(const ::ResourceRecordSrvPayload& item);
 };
 

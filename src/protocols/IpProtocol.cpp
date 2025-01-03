@@ -4,9 +4,9 @@
 namespace Protocol
 {
 
-const static std::map<std::string, ::IpProtocol> mapping {
-    { "IPV4", ::IpProtocol::IPV4 },
-    { "IPV6", ::IpProtocol::IPV6 },
+const static std::map<::IpProtocol, std::string> mapping {
+    { ::IpProtocol::IPV4, "IPV4" },
+    { ::IpProtocol::IPV6, "IPV6" },
 };
 
 

@@ -16,13 +16,13 @@ namespace Protocol
     switch (type)
     {
         case DnsResourceType::A:
-            return new ::ResourceRecordAPayload(ResourceRecordAPayload::fromByteArray(bytes, offset, type));
+            return new ::ResourceRecordAPayload(ResourceRecordAPayload::fromByteArray(bytes, offset));
         case DnsResourceType::PTR:
-            return new ::ResourceRecordPtrPayload(ResourceRecordPtrPayload::fromByteArray(bytes, offset, type));
+            return new ::ResourceRecordPtrPayload(ResourceRecordPtrPayload::fromByteArray(bytes, offset));
         case DnsResourceType::SRV:
-            return new ::ResourceRecordSrvPayload(ResourceRecordSrvPayload::fromByteArray(bytes, offset, type));
+            return new ::ResourceRecordSrvPayload(ResourceRecordSrvPayload::fromByteArray(bytes, offset));
         case DnsResourceType::TXT:
-            return new ::ResourceRecordTxtPayload(ResourceRecordTxtPayload::fromByteArray(bytes, offset, length, type));
+            return new ::ResourceRecordTxtPayload(ResourceRecordTxtPayload::fromByteArray(bytes, offset, length));
         default:
             return nullptr;
     }

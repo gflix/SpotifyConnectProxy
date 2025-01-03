@@ -7,11 +7,9 @@ namespace Protocol
 ::ResourceRecordTxtPayload ResourceRecordTxtPayload::fromByteArray(
     const ::ByteArray& bytes,
     size_t offset,
-    ssize_t length,
-    DnsResourceType type)
+    ssize_t length)
 {
-    ::ResourceRecordTxtPayload result {
-        type };
+    ::ResourceRecordTxtPayload result;
     Protocol::StringList::fromLengthValueEncodedByteArray(bytes.substr(offset, length), 0, result.lines);
 
     return result;

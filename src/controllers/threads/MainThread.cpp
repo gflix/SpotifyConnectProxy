@@ -217,7 +217,6 @@ void MainThread::proxySpotifyConnectInformationIfApplicable(
                 false,
                 60,
                 Protocol::ResourceRecordPtrPayload::toByteArray(ResourceRecordPtrPayload(
-                    DnsResourceType::PTR,
                     { ptrData->domainName.front(), "_spotify-connect", "_tcp", "local" })))));
             proxiedMdnsMessage.answers.push_back(std::move(MdnsResourceRecord(
                 { ptrData->domainName.front(), "_spotify-connect", "_tcp", "local" },
@@ -226,7 +225,6 @@ void MainThread::proxySpotifyConnectInformationIfApplicable(
                 false,
                 60,
                 Protocol::ResourceRecordSrvPayload::toByteArray(ResourceRecordSrvPayload(
-                    DnsResourceType::SRV,
                     0,
                     0,
                     srvData->port,
@@ -238,7 +236,6 @@ void MainThread::proxySpotifyConnectInformationIfApplicable(
                 false,
                 60,
                 Protocol::ResourceRecordTxtPayload::toByteArray(ResourceRecordTxtPayload(
-                    DnsResourceType::TXT,
                     txtData->lines)))));
             proxiedMdnsMessage.answers.push_back(std::move(MdnsResourceRecord(
                 { ptrData->domainName.front(), "local" },
@@ -247,7 +244,6 @@ void MainThread::proxySpotifyConnectInformationIfApplicable(
                 false,
                 60,
                 Protocol::ResourceRecordAPayload::toByteArray(ResourceRecordAPayload(
-                    DnsResourceType::A,
                     targetHost )))));
 
             auto proxiedMdnsMessageBytes = Protocol::MdnsMessage::toByteArray(proxiedMdnsMessage);

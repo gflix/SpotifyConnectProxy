@@ -7,7 +7,6 @@
 struct ResourceRecordPtrPayload: public GenericResourceRecordPayload
 {
     explicit ResourceRecordPtrPayload(
-        DnsResourceType type,
         const StringList& domainName = StringList());
     virtual ~ResourceRecordPtrPayload();
 

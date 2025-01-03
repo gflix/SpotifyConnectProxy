@@ -3,9 +3,8 @@
 #include <utils/Join.hpp>
 
 ResourceRecordPtrPayload::ResourceRecordPtrPayload(
-    DnsResourceType type,
     const StringList& domainName):
-    GenericResourceRecordPayload(type),
+    GenericResourceRecordPayload(DnsResourceType::PTR),
     domainName(domainName)
 {
 }

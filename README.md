@@ -25,7 +25,7 @@ To build the Debian package (Debian, Ubuntu and its derivatives) do the followin
 and entering the directory to which the sources have been checked out:
 
 ```
-$ sudo apt install debhelper cmake libsystemd-dev pkg-config
+$ sudo apt install debhelper cmake gcovr libgtest-dev libsystemd-dev pkg-config
 $ dpkg-buildpackage -uc -us -b
 ```
 
