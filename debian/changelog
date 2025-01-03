@@ -1,5 +1,5 @@
-spotify-connect-proxy (0.0.1) UNRELEASED; urgency=medium
+spotify-connect-proxy (0.0.1) noble; urgency=medium
 
   * Initial Release.
 
- -- Felix Mellmann <flix@benfm.de>  Thu, 26 Dec 2024 07:59:36 +0100
+ -- Felix Mellmann <felix.mellmann@funkwerk.com>  Fri, 03 Jan 2025 10:39:55 +0100
